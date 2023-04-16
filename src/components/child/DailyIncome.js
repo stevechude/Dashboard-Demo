@@ -59,9 +59,9 @@ const barData = [
 
 function DailyIncome() {
   return (
-    <div className="flex gap-12 justify-around mx-7 py-5">
+    <div className="flex flex-wrap gap-2 md:flex-nowrap justify-center md:gap-12 md:justify-around md:mx-7 py-5">
       {/* daily income */}
-      <div className="flex justify-between align-middle border h-24 w-64 px-4 rounded-lg bg-gradient-to-r bg-blue-500 text-white">
+      <div className="flex justify-between align-middle border h-24 w-80 md:w-64 px-4 rounded-lg bg-gradient-to-r bg-blue-500 text-white">
         <div className="flex flex-col justify-start align-middle gap-2 py-4">
           <p className="text-xs">Daily Income</p>
           <p className="text-2xl font-semibold">$ 345</p>
@@ -83,7 +83,7 @@ function DailyIncome() {
         </div>
       </div>
       {/* daily expense */}
-      <div className="flex justify-between align-middle border h-24 w-64 px-4 rounded-lg bg-white text-black">
+      <div className="flex justify-between align-middle border h-24 w-80 md:w-64 px-4 rounded-lg bg-white text-black">
         <div className="flex flex-col justify-start align-middle gap-2 py-4">
           <p className="text-xs">Daily Expense</p>
           <p className="text-2xl font-semibold">$ 380</p>
@@ -95,7 +95,7 @@ function DailyIncome() {
         </div>
       </div>
       {/* weekly income */}
-      <div className="flex justify-between align-middle border h-24 w-64 px-4 rounded-lg bg-white text-black">
+      <div className="flex justify-between align-middle border h-24 w-80 md:w-64 px-4 rounded-lg bg-white text-black">
         <div className="flex flex-col justify-start align-middle gap-2 py-4">
           <p className="text-xs">Weekly Income</p>
           <p className="text-2xl font-semibold">$ 5380</p>
@@ -115,7 +115,7 @@ function DailyIncome() {
         </div>
       </div>
       {/* weeklly expense */}
-      <div className="flex justify-between align-middle border h-24 w-64 px-4 rounded-lg bg-white text-black">
+      <div className="flex justify-between align-middle border h-24 w-80 md:w-64 px-4 rounded-lg bg-white text-black">
         <div className="flex flex-col justify-start align-middle gap-2 py-4">
           <p className="text-xs">Weekly Expense</p>
           <p className="text-2xl font-semibold">$ 4320</p>

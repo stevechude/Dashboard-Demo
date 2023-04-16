@@ -4,7 +4,7 @@ import Products from "./partials/Products";
 
 function CategoryProd() {
   return (
-    <div className="flex justify-between mx-7">
+    <div className="flex flex-col gap-2 md:gap-0 md:flex-row justify-between md:mx-7">
       <Category />
       <Products />
     </div>

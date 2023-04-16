@@ -50,11 +50,20 @@ const data = [
 
 function Category() {
   return (
-    <div className="container w-2/6 h-80 border bg-white rounded-md text-xs">
-      <p className="text-slate-500 text-sm mt-3 ml-4">Top Selling Categories</p>
+    <div className="container w-auto md:w-2/6 h-80 border bg-white rounded-md text-xs">
+      <p className="text-slate-500 text-xs md:text-sm mt-3 ml-4">
+        Top Selling Categories
+      </p>
       {/* <div className=""> #377fe1 #f3acbf */}
       <ResponsiveContainer width="95%" height="95%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          outerRadius="80%"
+          data={data}
+          // style={{ fontSize: "11px" }}
+          // className="md:text-xs"
+        >
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis angle={30} domain={[0, 150]} />
