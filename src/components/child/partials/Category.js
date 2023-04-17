@@ -3,7 +3,6 @@ import {
   Radar,
   RadarChart,
   PolarGrid,
-  //   Legend,
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
@@ -54,16 +53,9 @@ function Category() {
       <p className="text-slate-500 text-xs md:text-sm mt-3 ml-4">
         Top Selling Categories
       </p>
-      {/* <div className=""> #377fe1 #f3acbf */}
+
       <ResponsiveContainer width="95%" height="95%">
-        <RadarChart
-          cx="50%"
-          cy="50%"
-          outerRadius="80%"
-          data={data}
-          // style={{ fontSize: "11px" }}
-          // className="md:text-xs"
-        >
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis angle={30} domain={[0, 150]} />
@@ -81,10 +73,8 @@ function Category() {
             fill="#f3acbf"
             fillOpacity={0.6}
           />
-          {/* <Legend /> */}
         </RadarChart>
       </ResponsiveContainer>
-      {/* </div> */}
     </div>
   );
 }

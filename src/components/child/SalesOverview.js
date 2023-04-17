@@ -42,7 +42,7 @@ function SalesOverview() {
       </div>
       {/* </div> */}
       {/* chart */}
-      <div className="">
+      <div>
         <Chart />
       </div>
     </div>

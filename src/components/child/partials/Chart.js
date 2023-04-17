@@ -25,16 +25,15 @@ ChartJS.register(
 
 const options = {
   responsive: true,
-
-  //   plugins: {
-  //     legend: {
-  //       position: 'top' as const,
-  //     },
-  //     title: {
-  //       display: true,
-  //       text: 'Chart.js Line Chart',
-  //     },
-  //   },
+  // maintainAspectRatio: true,
+  scales: {
+    x: {
+      display: true,
+    },
+    y: {
+      display: false, // Set display property to false to hide the y-axis
+    },
+  },
 };
 
 const labels = [
@@ -54,11 +53,14 @@ const labels = [
 const createData = () => {
   return labels.map((month) => {
     const income = Math.round(Math.random() * 800) + 500;
+    // const modifier = Math.sin((index / labels.length) * Math.PI) * 2;
 
     return {
       month,
       expenses: Math.round(income / 5),
+      // expenses: Math.round(income / 5) * modifier,
       income,
+      // income: income * modifier,
     };
   });
 };
@@ -67,7 +69,7 @@ const fetchData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(createData());
-    }, 1000);
+    }, 2000);
   });
 };
 
@@ -95,6 +97,8 @@ function Chart() {
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         fill: true,
+        lineTension: 0.4,
+        pointRadius: 0,
       },
       {
         label: "Income",
@@ -102,11 +106,18 @@ function Chart() {
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         fill: true,
+        lineTension: 0.4,
+        pointRadius: 0,
       },
     ],
   };
 
-  if (loading) return "Loading...";
+  if (loading)
+    return (
+      <div className="flex justify-center align-middle">
+        <p className="text-3xl">Loading...</p>
+      </div>
+    );
 
   return <Line data={chartData} options={options} height={50} />;
 }
